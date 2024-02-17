@@ -345,7 +345,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 75a40b5a6a863f541907eec9054668ca, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bc4a4c55d32329e4492d54b1583fb535, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -456,6 +456,9 @@ MonoBehaviour:
   minReturnPositionX: -8
   adultscript: {fileID: 50334062}
   stage4: {fileID: 2109482870}
+  clearbackImage: {fileID: 21300000, guid: 51e7a262aab7d454c9b3f18236273b6e, type: 3}
+  backImage: {fileID: 738741290}
+  rainbackImage: {fileID: 1887064332}
 --- !u!1 &1595959404
 GameObject:
   m_ObjectHideFlags: 0

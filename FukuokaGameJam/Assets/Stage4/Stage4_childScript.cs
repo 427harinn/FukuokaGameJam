@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 public class Stage4_childScript : MonoBehaviour
 {
     [Header("移動させたいスピード(X方向)")]
@@ -16,6 +19,9 @@ public class Stage4_childScript : MonoBehaviour
     [SerializeField]Stage4_adultScript adultscript;
 
     [SerializeField] Stage4Script stage4;
+    [SerializeField] Sprite clearbackImage;
+    [SerializeField] GameObject backImage;
+    [SerializeField] GameObject rainbackImage;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,10 +64,18 @@ public class Stage4_childScript : MonoBehaviour
 
             if (timer > 3)
             {
-                Debug.Log("ゲームクリア");
+                backImage.GetComponent<Image>().sprite = clearbackImage;
+                backImage.transform.parent.GetComponent<AudioSource>().enabled = false;
+                rainbackImage.SetActive(false);
+                Invoke("loadscene",2f);
             }
         }
 
+    }
+
+    void loadscene()
+    {
+        SceneManager.LoadScene("Stage5");
     }
 
 
