@@ -21,6 +21,8 @@ public class kms_MoveRoundTripScript : MonoBehaviour
     [SerializeField] float maxReturnPositionY;
     [SerializeField] float minReturnPositionY;
     private string objName;
+
+    public stage2_start stage2script;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,21 +32,25 @@ public class kms_MoveRoundTripScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 position = transform.position;
-        position.x += moveSpeedX * Time.deltaTime;
-        position.y += moveSpeedY * Time.deltaTime;
-
-        //Debug.Log("X: " + position.x + " Y: " + position.y);
-
-        if (maxReturnPositionX < position.x || minReturnPositionX > position.x)
+        if(stage2script.start)
         {
-            moveSpeedX *= -1;
+            Vector3 position = transform.position;
+            position.x += moveSpeedX * Time.deltaTime;
+            position.y += moveSpeedY * Time.deltaTime;
+
+            //Debug.Log("X: " + position.x + " Y: " + position.y);
+
+            if (maxReturnPositionX < position.x || minReturnPositionX > position.x)
+            {
+                moveSpeedX *= -1;
+            }
+            if (maxReturnPositionY < position.y || minReturnPositionY > position.y)
+            {
+                moveSpeedY *= -1;
+            }
+            transform.position = position;
         }
-        if (maxReturnPositionY < position.y || minReturnPositionY > position.y)
-        {
-            moveSpeedY *= -1;
-        }
-        transform.position = position;
+
 
     }
     public void button()
