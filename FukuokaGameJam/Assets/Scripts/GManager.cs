@@ -32,6 +32,7 @@ public class GManager : MonoBehaviour
 
         AudioMixer amix = Resources.Load("GameAudio") as AudioMixer;
 
+        /*
         bgmAudioSource = instance.gameObject.AddComponent<AudioSource>();
         bgmAudioSource.outputAudioMixerGroup = amix.FindMatchingGroups("BGM")[0];
         bgmAudioSource.loop = true;
@@ -42,6 +43,7 @@ public class GManager : MonoBehaviour
 
         seAudioSource2 = instance.gameObject.AddComponent<AudioSource>();
         seAudioSource2.outputAudioMixerGroup = amix.FindMatchingGroups("SE")[0];
+        */
     }
 
 
