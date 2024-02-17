@@ -5,6 +5,7 @@ using UnityEngine;
 public class StartCountScript : MonoBehaviour
 {
     [SerializeField] GameObject[] destroyobj;
+    
     // Start is called before the first frame update
     void Start()
     {
