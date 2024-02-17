@@ -4,42 +4,48 @@ using UnityEngine;
 
 public class Stage1_PlayerScript : MonoBehaviour
 {
-    int count = 0;
-    [SerializeField] int clearCount = 10;
-    [SerializeField] GameObject result;
 
-    bool gameclear = false;
+    [Header("移動させたいスピード(X方向)")]
+    [SerializeField] float moveSpeedX; //x軸移動速度
 
-    [SerializeField] AudioClip stageBGM;
-    [SerializeField] AudioClip clearSE;
-    
+    [Header("反転させる位置(X方向)")]
+    [SerializeField] float maxReturnPositionX; //反転する位置（この距離を進んだら折り返す）
+    [SerializeField] float minReturnPositionX; //反転する位置（この距離を進んだら折り返す）
 
+    [SerializeField] Stage1Script stage1;
+
+    bool jump = false;
     // Start is called before the first frame update
     void Start()
     {
-        GManager.instance.PlayBGM(stageBGM);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (gameclear) return;
 
-        if(Input.GetKeyDown(KeyCode.Comma)) 
-        { 
-            count++;
-            if(count >= clearCount)
+        if (stage1.start)
+        {
+            Vector3 position = transform.position;
+            position.x += moveSpeedX * Time.deltaTime;
+
+            if(jump)
             {
-                gameclear = true;
-                GManager.instance.PlaySE(clearSE);
-
-                //クリアしたら時間を止める
-                GManager.instance.SetTimeScale(0);
-                result.SetActive(true);
-                result.GetComponent<RectTransform>().localPosition = Vector3.zero;
+                position.y += moveSpeedX * Time.deltaTime;
             }
+
+            transform.position = position;
         }
 
+    }
 
+    public void onClicked_screen()
+    {
+        Debug.Log(transform.position.x);
+        if (Mathf.Abs(4 - transform.position.x) < 0.5f) {
+            jump = true;
+        }
+        
     }
 }
