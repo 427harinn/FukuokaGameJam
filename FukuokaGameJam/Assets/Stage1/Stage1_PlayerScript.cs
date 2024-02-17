@@ -12,6 +12,7 @@ public class Stage1_PlayerScript : MonoBehaviour
 
     [SerializeField] AudioClip stageBGM;
     [SerializeField] AudioClip clearSE;
+    
 
     // Start is called before the first frame update
     void Start()
