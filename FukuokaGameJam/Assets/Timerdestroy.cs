@@ -21,7 +21,7 @@ public class Timerdestroy : MonoBehaviour
     public void worldstop()
     {
         finish = true;
-        Invoke("timerdelete", 5.0f);
+        Invoke("timerdelete", 4.0f);
     }
 
     public void timerdelete()

@@ -22,6 +22,7 @@ public class Stage4_childScript : MonoBehaviour
     [SerializeField] Sprite clearbackImage;
     [SerializeField] GameObject backImage;
     [SerializeField] GameObject rainbackImage;
+    [SerializeField] GameObject timerobj;
     // Start is called before the first frame update
     void Start()
     {
@@ -53,7 +54,7 @@ public class Stage4_childScript : MonoBehaviour
             transform.position = position;
             transform.localScale = localScale;
 
-            if (Mathf.Abs(adultscript.adultpositionX - transform.position.x) < 1.5f)
+            if (Mathf.Abs(adultscript.adultpositionX - transform.position.x) < 2f)
             {
                 timer += Time.deltaTime;
             }
@@ -62,8 +63,9 @@ public class Stage4_childScript : MonoBehaviour
                 timer = 0;
             }
 
-            if (timer > 3)
+            if (timer > 3 && !timerobj.GetComponent<Timerdestroy>().finish)
             {
+                timerobj.SetActive(false);
                 backImage.GetComponent<Image>().sprite = clearbackImage;
                 backImage.transform.parent.GetComponent<AudioSource>().enabled = false;
                 rainbackImage.SetActive(false);
