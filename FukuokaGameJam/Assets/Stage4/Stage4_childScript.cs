@@ -63,7 +63,7 @@ public class Stage4_childScript : MonoBehaviour
                 timer = 0;
             }
 
-            if (timer > 3 && !timerobj.GetComponent<Timerdestroy>().finish)
+            if (timer > 2 && !timerobj.GetComponent<Timerdestroy>().finish)
             {
                 timerobj.SetActive(false);
                 backImage.GetComponent<Image>().sprite = clearbackImage;

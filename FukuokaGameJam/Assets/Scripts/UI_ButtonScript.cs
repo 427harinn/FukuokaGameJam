@@ -52,4 +52,9 @@ public class UI_ButtonScript : MonoBehaviour
         SceneManager.LoadScene("SettingScene");
     }
 
+    public void ReturnButton()
+    {
+        SceneManager.LoadScene("TitleScene");
+    }
+
 }

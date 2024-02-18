@@ -8,7 +8,7 @@ public class PlayBgmScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GManager.instance.PlayBGM(bgm);
+        //GManager.instance.PlayBGM(bgm);
     }
 
     // Update is called once per frame

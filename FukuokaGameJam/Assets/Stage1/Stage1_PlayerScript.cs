@@ -96,7 +96,7 @@ public class Stage1_PlayerScript : MonoBehaviour
 
     public void onClicked_screen()
     {
-        if (-2.8f < transform.position.x && transform.position.x < -0.9f) {
+        if (-2.8f < transform.position.x && transform.position.x < -0.9f && !jumped) {
             jump = true;
             jumped = true;
             this.gameObject.GetComponent<AudioSource>().PlayOneShot(jumpclip);
