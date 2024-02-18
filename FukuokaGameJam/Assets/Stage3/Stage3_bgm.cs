@@ -8,6 +8,7 @@ public class Stage3_bgm : MonoBehaviour
     [SerializeField] AudioClip rain;
 
     public bool start;
+    [SerializeField] GameObject finishanim;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,7 @@ public class Stage3_bgm : MonoBehaviour
         timer += Time.deltaTime;
         if (timer > 3 && !start)
         {
+            finishanim.SetActive(true);
             start = true;
             gameObject.GetComponent<AudioSource>().PlayOneShot(rain);
         }

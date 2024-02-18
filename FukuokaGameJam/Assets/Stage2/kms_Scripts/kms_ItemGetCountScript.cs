@@ -10,12 +10,14 @@ public class kms_ItemGetCountScript : MonoBehaviour
 
     [SerializeField] GameObject clearObj;
     [SerializeField] GameObject canvas;
+    [SerializeField] GameObject timer;
     public AudioClip getclip;
     public AudioClip clearclip;
 
     bool clear = false;
 
     public GameObject yuge;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,7 @@ public class kms_ItemGetCountScript : MonoBehaviour
     {
         if(itemGetCount == 3 && !clear)
         {
+            Destroy(timer);
             Invoke("loadscene", 3.0f);
             clear = true;
             yuge.SetActive(true);

@@ -31,7 +31,8 @@ public class Stage1_PlayerScript : MonoBehaviour
     public Sprite walksprite;
     public Sprite jumpsprite;
     public Sprite clearsprite;
-    
+
+    [SerializeField] Timerdestroy timerscript;
     // Start is called before the first frame update
     void Start()
     {
@@ -72,7 +73,7 @@ public class Stage1_PlayerScript : MonoBehaviour
                     position.y += -(moveSpeedY + 1) * Time.deltaTime;
                 }
             }
-            if(transform.position.x > 5)
+            if(transform.position.x > 5 && !timerscript.finish)
             {
                 clear = true;
                 moveSpeedX = 0;

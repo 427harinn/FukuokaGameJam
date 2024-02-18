@@ -10,6 +10,7 @@ public class AllCount : MonoBehaviour
 
     [SerializeField] AudioSource audio;
     [SerializeField] AudioClip audioclip;
+    [SerializeField] GameObject timer;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +31,7 @@ public class AllCount : MonoBehaviour
 
         if (allCount == 0)
         {
-            
+            timer.SetActive(false);
             UnityEngine.Debug.Log(allCount);
                 //UnityEngine.Debug.Log(allCount);
             animationComponent.enabled = true;
